@@ -1,7 +1,7 @@
 .hero {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
   width: 95vw;
-  height: 40vh;
+  height: 30vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
