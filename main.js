@@ -25,8 +25,8 @@ const mapData = async (data) => {
   mappedData.forEach((element) => {
     app.innerHTML += `
     <div class="card">
+    <img src="${element.poster}" alt="${element.title}" />
       <h3>${element.title}</h3>
-      <img src="${element.poster}" alt="${element.title}" />
       <p>${element.description}</p>`;
   });
 

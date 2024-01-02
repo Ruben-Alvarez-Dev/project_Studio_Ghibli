@@ -1,3 +1,31 @@
 body {
   background-color: lightgrey;
 }
+
+.card {
+  background-color: forestgreen;
+  margin: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.card h3 {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card p {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  margin: 2rem;
+}
