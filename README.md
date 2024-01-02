@@ -1,1 +1,0 @@
-# project_Studio_Ghibli

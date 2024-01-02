@@ -1,37 +1,24 @@
-const urlBase = "https://ghibliapi.vercel.app";
-const urlEndpointFilms = "/films";
-const urlEndpointPeople = "/people";
-const urlEndpointLocations = "/locations";
-const urlEndpointSpecies = "/species";
-const urlEndpointVehicles = "/vehicles";
+import './style.css'
+import javascriptLogo from './javascript.svg'
+import viteLogo from '/vite.svg'
+import { setupCounter } from './counter.js'
 
-const app = document.querySelector("#app");
-app.innerHTML = `<h2>Studio Ghibli API</h2>`;
-
-const getData = async (url) => {
-  const response = await fetch(url);
-  const data = await response.json();
-  mapData(data);
-  //return data;
-};
-
-const mapData = async (data) => {
-  const mappedData = data.map((film) => ({
-    title: film.title,
-    description: film.description,
-    poster: film.image,
-  }));
-
-  mappedData.forEach((element) => {
-    app.innerHTML += `
+document.querySelector('#app').innerHTML = `
+  <div>
+    <a href="https://vitejs.dev" target="_blank">
+      <img src="${viteLogo}" class="logo" alt="Vite logo" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
+    </a>
+    <h1>Hello Vite!</h1>
     <div class="card">
-      <img src="${element.poster}" alt="${element.title}" />
-      <h3>${element.title}</h3>
-      <p>${element.description}</p>`;
-  });
+      <button id="counter" type="button"></button>
+    </div>
+    <p class="read-the-docs">
+      Click on the Vite logo to learn more
+    </p>
+  </div>
+`
 
-  console.log(mappedData);
-  // return mappedData;
-};
-
-getData(urlBase + urlEndpointFilms);
+setupCounter(document.querySelector('#counter'))
