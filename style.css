@@ -1,5 +1,21 @@
-body {
+.body {
   background-color: lightgrey;
+}
+
+.header {
+  background-color: rgba(34, 139, 34, 0.75);
+  color: rgb(0, 0, 0);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
 }
 
 .card {
