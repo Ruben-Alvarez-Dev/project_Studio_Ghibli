@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header .logo {
+  max-height: 8vw;
+}
+
+.header .navbar {
+}
+
+.header .navbar a {
+  margin: 2vw;
+}
