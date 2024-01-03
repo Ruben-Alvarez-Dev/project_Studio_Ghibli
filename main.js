@@ -1,6 +1,6 @@
 import "./style.css";
 import * as init from "./services/init.js";
-import * as data from "./services/data.js";
+// import * as db from "./services/db.js";
 
 /* // Declaramos contenedores útiles
 const hero = document.querySelector("#hero");
@@ -21,11 +21,15 @@ init.container(gallery);
 // Obtenemos los datos de la API
 // data.get(url);
 
-const pintar = async (url) => {
+/* const pintar = async (url) => {
   const response = await fetch(url);
   const rawData = await response.json();
   console.log(rawData);
   //return rawData;
 };
+ */
+// pintar(url);
 
-pintar(url);
+init.data(url);
+
+// data.get(url);

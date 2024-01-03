@@ -2,6 +2,7 @@ import { setupNavbar } from "../components/header/header.js";
 import { setupFooter } from "../components/footer/footer.js";
 import { setupHero } from "../components/hero/hero.js";
 import { setupGallery } from "../components/gallery/gallery.js";
+import * as db from "./db.js";
 
 export const structure = (target) => {
   // Inyectamos los componentes de la estructutra básica del DOM
@@ -28,4 +29,10 @@ export const components = () => {
 };
 export const container = (cont) => {
   cont.innerHTML = "";
+};
+export const data = async (url) => {
+  const rawData = await db.toGet(url);
+  const mappedData = await db.toMap(rawData);
+  const listData = await db.toList(mappedData);
+  await db.toRender(listData, gallery);
 };
