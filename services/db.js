@@ -1,3 +1,5 @@
+import { card } from "../components/gallery/card/card.js";
+
 export const toGet = async (url) => {
   const response = await fetch(url);
   const rawData = await response.json();
@@ -22,13 +24,15 @@ export const toList = (data) => {
 
   // añado los elementos del array a la lista
   data.forEach((element) => {
-    const card = `
+    /* const card = `
       <div class="card">
           <img class="card__img" src="${element.poster}">
           <h2 class="card__title">${element.title}</h2>
       </div>
-    `;
-    list.innerHTML += card;
+    `; */
+
+    const ccard = card(element);
+    list.innerHTML += ccard;
   });
   // devuelvo la lista
   return list;
