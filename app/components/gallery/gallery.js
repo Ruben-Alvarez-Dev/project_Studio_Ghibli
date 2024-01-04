@@ -12,3 +12,12 @@ export const galleryComponent = () => `
 export const setupGallery = (element) => {
   element.innerHTML = galleryComponent();
 };
+
+export const putListeners = () => {
+  const elements = document.querySelectorAll(".card");
+  elements.forEach((element) => {
+    element.addEventListener("click", () => {
+      console.log(element);
+    });
+  });
+};

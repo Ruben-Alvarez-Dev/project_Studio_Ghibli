@@ -1,4 +1,5 @@
-import { card } from "../app/components/gallery/card/card.js";
+import { cardComponent } from "../app/components/gallery/card/card.js";
+import * as check from "./active.js";
 
 export const toGet = async (url) => {
   const response = await fetch(url);
@@ -8,6 +9,7 @@ export const toGet = async (url) => {
 export const toMap = (rawData) => {
   const mappedData = rawData.map((item) => {
     return {
+      id: item.id,
       title: item.title,
       description: item.description,
       poster: item.image,
@@ -22,20 +24,20 @@ export const toList = (data) => {
 
   // añado los elementos del array a la lista
   data.forEach((element) => {
-    /* const card = `
-      <div class="card">
-          <img class="card__img" src="${element.poster}">
-          <h2 class="card__title">${element.title}</h2>
-      </div>
-    `; */
-
     // Aquí acabo de componentizar el elemtento card a un js independiente
-    const ccard = card(element);
-    list.innerHTML += ccard;
+    const card = cardComponent(element);
+    card.addEventListener("click", () => {
+      hero.innerHTML = card;
+    });
+    list.innerHTML += card;
+    // devuelvo la lista
+    return list;
   });
-  // devuelvo la lista
-  return list;
 };
+
 export const toRender = (data, target) => {
   target.appendChild(data);
+};
+export const toHero = (element) => {
+  console.log(element);
 };

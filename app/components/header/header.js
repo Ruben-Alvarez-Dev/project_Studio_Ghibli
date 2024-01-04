@@ -7,36 +7,28 @@ export const navbarComponent = () => `
     <img class="logo" src="../public/logo.png" alt="Studio Ghibli Logo">
 </div>
 <navbar id="navbar" class="navbar">
-    <a id="a_home" href="#">Home</a>
-    <a id="a_films" href="#">Films</a>
-    <a id="a_people" href="#">People</a>
-    <a id="a_vehicles" href="#">Vehicles</a>
-    <a id="a_locations" href="#">Locations</a>
+    <a id="home" href="#">Home</a>
+    <a id="films" href="#">Films</a>
+    <a id="people" href="#">People</a>
+    <a id="vehicles" href="#">Vehicles</a>
+    <a id="locations" href="#">Locations</a>
 </navbar>
 `;
 
 // Esta es la función que pintará el navbar en el DOM y le añadirá función a los botones
 export const setupNavbar = (element) => {
   element.innerHTML = navbarComponent();
-  const a_home = document.querySelector("#a_home");
-  const a_films = document.querySelector("#a_films");
-  const a_people = document.querySelector("#a_people");
-  const a_vehicles = document.querySelector("#a_vehicles");
-  const a_locations = document.querySelector("#a_locations");
+  const a_home = document.querySelector("#home");
+  const a_films = document.querySelector("#films");
+  const a_people = document.querySelector("#people");
+  const a_vehicles = document.querySelector("#vehicles");
+  const a_locations = document.querySelector("#locations");
 
-  a_home.addEventListener("click", () =>
-    ignition("https://ghibliapi.vercel.app/films")
-  );
-  a_films.addEventListener("click", () =>
-    ignition("https://ghibliapi.vercel.app/films")
-  );
-  a_people.addEventListener("click", () =>
-    ignition("https://ghibliapi.vercel.app/people")
-  );
-  a_vehicles.addEventListener("click", () =>
-    ignition("https://ghibliapi.vercel.app/vehicles")
-  );
-  a_locations.addEventListener("click", () =>
-    ignition("https://ghibliapi.vercel.app/locations")
-  );
+  const urlBase = "https://ghibliapi.vercel.app/";
+
+  a_home.addEventListener("click", () => ignition(urlBase + "films"));
+  a_films.addEventListener("click", () => ignition(urlBase + "films"));
+  a_people.addEventListener("click", () => ignition(urlBase + "people"));
+  a_vehicles.addEventListener("click", () => ignition(urlBase + "vehicles"));
+  a_locations.addEventListener("click", () => ignition(urlBase + "locations"));
 };

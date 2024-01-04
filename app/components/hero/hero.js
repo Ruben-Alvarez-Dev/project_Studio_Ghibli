@@ -11,3 +11,14 @@ export const heroComponent = () => `
 export const setupHero = (element) => {
   element.innerHTML = heroComponent();
 };
+
+export const heroCard = (element) => {
+  const card = `
+    <div class="heroCard">
+        <img class="heroImg" src="${element.poster}">
+        <h2 class="heroTitle">${element.title}</h2>
+        <p class="heroDescription">${element.description}</p>
+    </div>
+  `;
+  return card;
+};
