@@ -7,7 +7,11 @@ let urlEnd = "/films";
 let url = urlBase + urlEnd;
 
 // Iniciamos estructura, componentes, limpiamos gallery y pintamos FILMS por defecto
-init.structure(document.querySelector("#app"));
-init.components();
-init.container(gallery);
-init.data(url);
+export const ignition = (url) => {
+  init.structure(document.querySelector("#app"));
+  init.components();
+  init.container(gallery);
+  init.data(url);
+};
+// Iniciamos la aplicación por defecto
+ignition(url);

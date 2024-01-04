@@ -5,12 +5,12 @@ export const toGet = async (url) => {
   const rawData = await response.json();
   return rawData;
 };
-export const toMap = (data) => {
-  const mappedData = data.map((film) => {
+export const toMap = (rawData) => {
+  const mappedData = rawData.map((item) => {
     return {
-      title: film.title,
-      description: film.description,
-      poster: film.image,
+      title: item.title,
+      description: item.description,
+      poster: item.image,
     };
   });
   return mappedData;
