@@ -5,7 +5,6 @@ export const toGet = async (url) => {
   const rawData = await response.json();
   return rawData;
 };
-
 export const toMap = (data) => {
   const mappedData = data.map((film) => {
     return {
@@ -16,7 +15,6 @@ export const toMap = (data) => {
   });
   return mappedData;
 };
-
 export const toList = (data) => {
   // creo un elemento lista vacío, con clase list
   const list = document.createElement("div");
@@ -31,13 +29,13 @@ export const toList = (data) => {
       </div>
     `; */
 
+    // Aquí acabo de componentizar el elemtento card a un js independiente
     const ccard = card(element);
     list.innerHTML += ccard;
   });
   // devuelvo la lista
   return list;
 };
-
 export const toRender = (data, target) => {
   target.appendChild(data);
 };
