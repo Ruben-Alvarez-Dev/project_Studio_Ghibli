@@ -1,4 +1,4 @@
-import { card } from "../components/gallery/card/card.js";
+import { card } from "../app/components/gallery/card/card.js";
 
 export const toGet = async (url) => {
   const response = await fetch(url);

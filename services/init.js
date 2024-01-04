@@ -1,22 +1,12 @@
-import { setupNavbar } from "../components/header/header.js";
-import { setupFooter } from "../components/footer/footer.js";
-import { setupHero } from "../components/hero/hero.js";
-import { setupGallery } from "../components/gallery/gallery.js";
+import { setupNavbar } from "../app/components/header/header.js";
+import { setupFooter } from "../app/components/footer/footer.js";
+import { setupHero } from "../app/components/hero/hero.js";
+import { setupGallery } from "../app/components/gallery/gallery.js";
 import { app } from "../app/app.js";
 import * as db from "./db.js";
 
 export const structure = (target) => {
-  // Inyectamos los componentes de la estructutra básica del DOM
-  /* target.innerHTML = `
-        <header id="header" class="header"></header>
-        <main id="main" class="main">
-            <div id="hero" class="hero"></div>
-            <div id="gallery" class="gallery"></div>
-        </main>
-        <footer id="footer" class="footer"></footer>
-      `;
- */
-
+  // Inyectamos el componentes APP con la estructutra básica del DOM
   target.innerHTML = app();
 
   // Declaramos contenedores útiles
