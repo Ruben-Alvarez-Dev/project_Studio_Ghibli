@@ -2,8 +2,15 @@
   background-color: rgba(255, 255, 255, 0.1);
   width: 95vw;
   height: 55vh;
+}
+
+.list {
+  gap: 0.5rem;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }

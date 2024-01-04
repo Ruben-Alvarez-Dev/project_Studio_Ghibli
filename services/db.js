@@ -16,19 +16,17 @@ export const toMap = (data) => {
 };
 
 export const toList = (data) => {
-  // creo un elemento lista vacío
-  const list = document.createElement("ul");
-  // le añado la clase gallery
-  list.classList.add("gallery__list");
+  // creo un elemento lista vacío, con clase list
+  const list = document.createElement("div");
+  list.classList.add("list");
+
   // añado los elementos del array a la lista
   data.forEach((element) => {
     const card = `
-      <li class="gallery__item">
-        <article class="card">
-          <img class="card__img" src="${element.poster}" alt="${element.title}">
+      <div class="card">
+          <img class="card__img" src="${element.poster}">
           <h2 class="card__title">${element.title}</h2>
-          <p class="card__description">${element.description}</p>
-        </article>
+      </div>
     `;
     list.innerHTML += card;
   });

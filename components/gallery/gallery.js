@@ -1,4 +1,5 @@
 import "./gallery.css";
+import "./card/card.css";
 
 // Este es el componente en HTML
 export const galleryComponent = () => `
